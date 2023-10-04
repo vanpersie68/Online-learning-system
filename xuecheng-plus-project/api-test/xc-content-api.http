@@ -1,0 +1,61 @@
+### 查询课程信息
+POST {{content_host}}/content/course/list?pageNo=1&pageSize=2
+Content-Type: application/json
+
+{
+  "auditStatus": "202004",
+  "courseName": "java",
+  "publishStatus": "203001"
+}
+
+### 查询课程分类
+GET {{content_host}}/content/course-category/tree-nodes
+
+### 新增课程
+POST {{content_host}}/content/course
+Content-Type: application/json
+
+{
+  "mt": "1-1",
+  "st": "1-1-1",
+  "name": "",
+  "pic": "asdda",
+  "teachmode": "200002",
+  "users": "初级人员",
+  "tags": "asdasd",
+  "grade": "204001",
+  "description": "java网络编程高级,java网络编程高级,java网络编程高级",
+  "charge": "201001",
+  "price": 10,
+  "originalPrice":100,
+  "qq": "22333",
+  "wechat": "223334",
+  "phone": "133333",
+  "validDays": 365
+}
+
+### 根据课程id查询
+GET {{content_host}}/content/course/40
+Content-Type: application/json
+
+### 查询某个课程的课程计划
+GET {{content_host}}/content/teachplan/117/tree-nodes
+
+### 课程计划绑定视频
+POST {{content_host}}/media/teachplan/association/media
+Content-Type: application/json
+
+{
+  "mediaId": "",
+  "fileName": "",
+  "teachplanId": ""
+}
+
+###根据课程id查询课程---带springSecurity认证
+GET{{content_host}}/content/course/40
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODM1MzEwMDksImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjQ3NWFkZTY1LTM4NTItNDAyNS04MzFiLTYwYmE4NWU1ZWFhMSIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.p-2XKVKTlYX5CIKlppNpxaliGTHFwkd4aHDBmLs49p8
+
+
+### 通过网关进行 课程id查询
+GET {{gateway_host}}/content/course/40
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ7XCJjb21wYW55SWRcIjpcIjEyMzIxNDE0MjVcIixcImNyZWF0ZVRpbWVcIjpcIjIwMjItMDktMjhUMDg6MzI6MDNcIixcImlkXCI6XCI1MlwiLFwibmFtZVwiOlwiTeiAgeW4iFwiLFwic2V4XCI6XCIxXCIsXCJzdGF0dXNcIjpcIlwiLFwidXNlcm5hbWVcIjpcInQxXCIsXCJ1dHlwZVwiOlwiMTAxMDAyXCJ9Iiwic2NvcGUiOlsiYWxsIl0sImV4cCI6MTY4MzUzOTkyMCwiYXV0aG9yaXRpZXMiOlsidGVzdCJdLCJqdGkiOiJjZGU4MmRiMy05YmQyLTQyNTYtODY5ZC1hNTRkMDJjZDM1MDgiLCJjbGllbnRfaWQiOiJYY1dlYkFwcCJ9.wZxIMNexLjaUQzuN02AcLhV1xjXyygap3VX_Ee-n6P4
